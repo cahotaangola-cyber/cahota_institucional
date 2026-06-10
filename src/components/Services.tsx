@@ -1,5 +1,5 @@
 import React from 'react';
-import { Ship, Cpu, Utensils, Route, ArrowUpRight, CheckCircle } from 'lucide-react';
+import { Ship, Cpu, Utensils, Route, ArrowUpRight, CheckCircle, Palette, Laptop, ShieldCheck, HeartPulse, Hammer } from 'lucide-react';
 import { translations, Language } from '../types';
 import { motion } from 'motion/react';
 
@@ -17,6 +17,11 @@ export default function Services({ currentLang, onSelectServiceAndQuote }: Servi
       case 1: return <Cpu className="h-6 w-6 text-amber-500" />;
       case 2: return <Utensils className="h-6 w-6 text-amber-500" />;
       case 3: return <Route className="h-6 w-6 text-amber-500" />;
+      case 4: return <Palette className="h-6 w-6 text-amber-500" />;
+      case 5: return <Laptop className="h-6 w-6 text-amber-500" />;
+      case 6: return <ShieldCheck className="h-6 w-6 text-amber-500" />;
+      case 7: return <HeartPulse className="h-6 w-6 text-amber-500" />;
+      case 8: return <Hammer className="h-6 w-6 text-amber-500" />;
       default: return <Ship className="h-6 w-6 text-amber-500" />;
     }
   };
@@ -27,6 +32,11 @@ export default function Services({ currentLang, onSelectServiceAndQuote }: Servi
       case 1: return 'Technical Supply';
       case 2: return 'Food Supply';
       case 3: return 'Logistics';
+      case 4: return 'Corporate Image Management';
+      case 5: return 'Technological Solutions';
+      case 6: return 'Insurance Services';
+      case 7: return 'Occupational Health & Medicine';
+      case 8: return 'Civil Construction & Maintenance';
       default: return '';
     }
   };
@@ -59,6 +69,41 @@ export default function Services({ currentLang, onSelectServiceAndQuote }: Servi
       points: t.service4Points,
       technicalTag: currentLang === 'pt' ? "Operação de Armazém" : "Terminal Operation",
       keyName: 'Logistics'
+    },
+    {
+      name: t.service5Name,
+      desc: t.service5Desc,
+      points: t.service5Points,
+      technicalTag: currentLang === 'pt' ? "Imagem & Branding" : "Image & Branding",
+      keyName: 'Corporate Image Management'
+    },
+    {
+      name: t.service6Name,
+      desc: t.service6Desc,
+      points: t.service6Points,
+      technicalTag: currentLang === 'pt' ? "TI & Inovação" : "IT & Innovation",
+      keyName: 'Technological Solutions'
+    },
+    {
+      name: t.service7Name,
+      desc: t.service7Desc,
+      points: t.service7Points,
+      technicalTag: currentLang === 'pt' ? "Proteção & Riscos" : "Risk & Coverage",
+      keyName: 'Insurance Services'
+    },
+    {
+      name: t.service8Name,
+      desc: t.service8Desc,
+      points: t.service8Points,
+      technicalTag: currentLang === 'pt' ? "Saúde & Segurança" : "Health & Safety",
+      keyName: 'Occupational Health & Medicine'
+    },
+    {
+      name: t.service9Name,
+      desc: t.service9Desc,
+      points: t.service9Points,
+      technicalTag: currentLang === 'pt' ? "Infraestrutura" : "Infrastructure",
+      keyName: 'Civil Construction & Maintenance'
     }
   ];
 
@@ -83,7 +128,7 @@ export default function Services({ currentLang, onSelectServiceAndQuote }: Servi
         </div>
  
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {serviceList.map((service, index) => (
             <div
               key={index}

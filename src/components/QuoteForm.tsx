@@ -231,6 +231,11 @@ export default function QuoteForm({ currentLang, selectedService, onServiceReset
                         <option value="Technical Supply">Technical Supply</option>
                         <option value="Food Supply">Food Supply</option>
                         <option value="Logistics">Supply Chain & Logistics</option>
+                        <option value="Corporate Image Management">{currentLang === 'pt' ? 'Gestão de Imagem Corporativa' : 'Corporate Image Management'}</option>
+                        <option value="Technological Solutions">{currentLang === 'pt' ? 'Soluções Tecnológicas' : 'Technological Solutions'}</option>
+                        <option value="Insurance Services">{currentLang === 'pt' ? 'Serviços de Seguros' : 'Insurance Services'}</option>
+                        <option value="Occupational Health & Medicine">{currentLang === 'pt' ? 'Medicina Ocupacional' : 'Occupational Health & Medicine'}</option>
+                        <option value="Civil Construction & Maintenance">{currentLang === 'pt' ? 'Construção Civil' : 'Civil Construction & Maintenance'}</option>
                       </select>
                     </div>
  

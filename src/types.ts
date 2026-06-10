@@ -37,6 +37,21 @@ export interface TranslationDict {
   service4Name: string;
   service4Desc: string;
   service4Points: string[];
+  service5Name: string;
+  service5Desc: string;
+  service5Points: string[];
+  service6Name: string;
+  service6Desc: string;
+  service6Points: string[];
+  service7Name: string;
+  service7Desc: string;
+  service7Points: string[];
+  service8Name: string;
+  service8Desc: string;
+  service8Points: string[];
+  service9Name: string;
+  service9Desc: string;
+  service9Points: string[];
   
   statsTitle: string;
   statsVessels: string;
@@ -97,7 +112,7 @@ export const translations: Record<Language, TranslationDict> = {
     
     aboutTitle: "Apresentação Corporativa",
     aboutSubtitle: "Operando com padrões de excelência há mais de 3 anos nos principais portos de Angola.",
-    aboutText1: "A CAHOTA LDA é uma empresa angolana sediada no Lobito, estrategicamente localizada na Estrada Nacional Nº 100, com representação ativa na província de Luanda. Há mais de três anos, fornecemos suprimentos técnicos qualificados e serviços especializados de alto nível.",
+    aboutText1: "A CAHOTA LDA é uma empresa angolana sediada no Lobito, estrategicamente localizada na Estrada Nacional Nº 100, com representação ativa na província de Luanda. Desde 2022 a fornecer suprimentos técnicos qualificados e serviços especializados de alto nível.",
     aboutText2: "A nossa missão é garantir a continuidade das suas operações marítimas e industriais através de entregas pontuais, conformidade com os mais rigorosos padrões de segurança internacional e assistência técnica contínua. Nos destacamos pela eficiência logística e suporte pós-venda inigualável.",
     aboutYears: "3+",
     aboutYearsText: "Anos de Operação Sólida em Angola",
@@ -137,6 +152,46 @@ export const translations: Record<Language, TranslationDict> = {
       "Desembaraço aduaneiro rápido e assessoria portuária completa",
       "Logística integrada e acompanhamento em tempo real",
       "Entrega direta 'last-mile' integrada até o porto ou instalação industrial"
+    ],
+    service5Name: "Gestão de Imagem Corporativa",
+    service5Desc: "Criação, fortalecimento e posicionamento estratégico da identidade visual e reputação da sua marca no mercado angolano.",
+    service5Points: [
+      "Design de identidade visual, logótipos e manuais de marca completos",
+      "Planeamento de comunicação e presença corporativa em media",
+      "Produção de fardamentos e materiais promocionais com personalização de alta qualidade",
+      "Organização de eventos corporativos e branding institucional"
+    ],
+    service6Name: "Soluções Tecnológicas",
+    service6Desc: "Infraestrutura de TI moderna, software corporativo, redes seguras e sistemas inteligentes de suporte para otimizar suas operações diárias.",
+    service6Points: [
+      "Desenvolvimento de softwares, plataformas web e gestão integrada de dados (Sistemas ERP)",
+      "Instalação e otimização de infraestrutura de rede, servidores e sistemas Wi-Fi",
+      "Cibersegurança avançada, backups e soluções de armazenamento na nuvem",
+      "Instalação e manutenção de sistemas de segurança biométrica, CCTV e controle de acessos"
+    ],
+    service7Name: "Serviço de Seguros",
+    service7Desc: "Consultoria de seguros abrangente e parcerias estratégicas para proteger os ativos, logística e colaboradores da sua empresa contra riscos operacionais.",
+    service7Points: [
+      "Seguros de frota de veículos, fardos logísticos e transporte de carga",
+      "Seguros de responsabilidade civil para operações marítimas, industriais e portuárias",
+      "Planos de saúde corporativos personalizados e seguros de acidentes de trabalho",
+      "Análise de gerenciamento de risco e parcerias com as melhores seguradoras de Angola"
+    ],
+    service8Name: "Medicina Ocupacional",
+    service8Desc: "Programas completos de saúde ocupacional conduzidos por especialistas, garantindo conformidade com a regulamentação em vigor em Angola e bem-estar para suas tripulações e operários.",
+    service8Points: [
+      "Exames admissionais, demissionais, periódicos e de aptidão física (Fit-for-Duty)",
+      "Programas de Prevenção de Riscos Profissionais (PPRA) e relatórios de conformidade de Higiene e Segurança",
+      "Treino de primeiros socorros nas instalações e assistência médica de emergência offshore",
+      "Gestão integrada de licenças de saúde, exames toxicológicos e campanhas de prevenção"
+    ],
+    service9Name: "Construção Civil",
+    service9Desc: "Execução de obras civis de excelência, instalações estruturais, ampliações e manutenção de plantas industriais, armazéns e escritórios.",
+    service9Points: [
+      "Desenho de projetos civis, cálculo estrutural e fiscalização técnica especializada",
+      "Construção e expansão de armazéns industriais, bases logísticas e escritórios modernos",
+      "Serviços de reabilitação estrutural, pavimentação asfáltica e engenharia de solos",
+      "Manutenção corretiva, pintura industrial e instalações hidráulicas de alta escala"
     ],
     
     statsTitle: "Cahota em Números",
@@ -236,6 +291,46 @@ export const translations: Record<Language, TranslationDict> = {
       "Fast customs clearance and expert port agency assistance",
       "Integrated logistics design with real-time transit tracking",
       "Dedicated last-mile delivery to terminal berths or industrial sites"
+    ],
+    service5Name: "Corporate Image Management",
+    service5Desc: "Branding, creation, and positioning of your corporate visual identity and brand reputation in the Angolan market.",
+    service5Points: [
+      "Visual identity design, logos, and comprehensive brand books",
+      "Strategic communication planning and corporate media presence",
+      "Production of high-quality customized corporate uniforms and promotional gear",
+      "Curation of corporate events and institutional branding support"
+    ],
+    service6Name: "Technological Solutions",
+    service6Desc: "Modern IT infrastructure, custom software, secure networks, and smart support systems to optimize daily industrial operations.",
+    service6Points: [
+      "Custom software planning, web portals, and ERP database design",
+      "Network infrastructure hardware setup, secure servers, and high-speed Wi-Fi",
+      "Cybersecurity defense audits, automatic backups, and cloud storage systems",
+      "Installation and upkeep of biometric access controls and CCTV surveillance networks"
+    ],
+    service7Name: "Insurance Services",
+    service7Desc: "Comprehensive insurance consultancies and strategic placements ensuring safety/mitigation for company assets and workforce.",
+    service7Points: [
+      "Commercial fleet insurance, logistic cargo coverage, and asset security",
+      "Marine, industrial, and major port operations liability coverage",
+      "Tailor-made health insurance plans and work accident protections",
+      "Active risk management assessments matching top Angolan insurance firms"
+    ],
+    service8Name: "Occupational Health & Medicine",
+    service8Desc: "Complete occupational health programs conducted by specialists to ensure safety compliance and crew physical readiness.",
+    service8Points: [
+      "Pre-employment, specialized periodical, exit, and fit-for-duty medical tests",
+      "Workplace Professional Risks Prevention Programs (PPRA) and hygiene reports",
+      "Bespoke first aid training and emergency medical backstop on active sites",
+      "Integrated sick leave administration, clinical tox tests, and health events"
+    ],
+    service9Name: "Civil Construction & Maintenance",
+    service9Desc: "Erecting premium structures, site modifications, expansions, and structural updates for factories, depots, and corporate offices.",
+    service9Points: [
+      "Drafting civil blueprint diagrams, structural calculus, and site audits",
+      "Building and expanding high-grade industrial warehouses and modern offices",
+      "Structural rehabilitation, asphalt concrete laying, and soil stability services",
+      "Corrective repairs, industrial protection paints, and water/drainage plumbing"
     ],
     
     statsTitle: "Cahota in Numbers",
