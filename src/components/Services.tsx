@@ -1,5 +1,5 @@
 import React from 'react';
-import { Ship, Cpu, Utensils, Route, ArrowUpRight, CheckCircle, Palette, Laptop, ShieldCheck, HeartPulse, Hammer } from 'lucide-react';
+import { Ship, Cpu, Utensils, Route, ArrowUpRight, CheckCircle, Palette, Laptop, ShieldCheck, HeartPulse, Hammer, Car } from 'lucide-react';
 import { translations, Language } from '../types';
 import { motion } from 'motion/react';
 
@@ -22,6 +22,7 @@ export default function Services({ currentLang, onSelectServiceAndQuote }: Servi
       case 6: return <ShieldCheck className="h-6 w-6 text-amber-500" />;
       case 7: return <HeartPulse className="h-6 w-6 text-amber-500" />;
       case 8: return <Hammer className="h-6 w-6 text-amber-500" />;
+      case 9: return <Car className="h-6 w-6 text-amber-500" />;
       default: return <Ship className="h-6 w-6 text-amber-500" />;
     }
   };
@@ -37,6 +38,7 @@ export default function Services({ currentLang, onSelectServiceAndQuote }: Servi
       case 6: return 'Insurance Services';
       case 7: return 'Occupational Health & Medicine';
       case 8: return 'Civil Construction & Maintenance';
+      case 9: return 'App-Based Ride-Hailing';
       default: return '';
     }
   };
@@ -104,6 +106,13 @@ export default function Services({ currentLang, onSelectServiceAndQuote }: Servi
       points: t.service9Points,
       technicalTag: currentLang === 'pt' ? "Infraestrutura" : "Infrastructure",
       keyName: 'Civil Construction & Maintenance'
+    },
+    {
+      name: t.service10Name,
+      desc: t.service10Desc,
+      points: t.service10Points,
+      technicalTag: currentLang === 'pt' ? "Mobilidade & Táxi" : "Mobility & Ride-Hailing",
+      keyName: 'App-Based Ride-Hailing'
     }
   ];
 

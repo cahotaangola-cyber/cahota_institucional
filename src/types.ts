@@ -52,6 +52,9 @@ export interface TranslationDict {
   service9Name: string;
   service9Desc: string;
   service9Points: string[];
+  service10Name: string;
+  service10Desc: string;
+  service10Points: string[];
   
   statsTitle: string;
   statsVessels: string;
@@ -91,8 +94,8 @@ export interface TranslationDict {
   contactEmail: string;
   contactHours: string;
   contactHoursValue: string;
-  officeLobito: string;
-  officeLuanda: string;
+  officeHeadOffice: string;
+  officeBranchOffice: string;
 }
 
 export const translations: Record<Language, TranslationDict> = {
@@ -100,9 +103,9 @@ export const translations: Record<Language, TranslationDict> = {
     navHome: "Início",
     navServices: "Serviços",
     navAbout: "Sobre Nós",
-    navClients: "Clientes",
+    navClients: "Parceiros",
     navQuote: "Solicitar Cotação",
-    navContact: "Contatos",
+    navContact: "Contactos",
     
     heroTitle: "Soluções Confiáveis e Suprimentos de Alta Qualidade para Setores Marítimo e Industrial",
     heroSubtitle: "A CAHOTA LDA é sua parceira estratégica em Angola para Ship Chandling, Fornecimento Técnico, Alimentos e Logística integrada com suporte pós-venda premium.",
@@ -142,7 +145,7 @@ export const translations: Record<Language, TranslationDict> = {
     service3Points: [
       "Alimentos frescos, carnes selecionadas, peixes e vegetais de qualidade",
       "Provisões secas, enlatados e mercearia importada de alta escala",
-      "Serviços de catering customizados para equipes offshore e rurais",
+      "Serviços de catering customizados para equipas offshore e rurais",
       "Certificação de cadeia de frio rigorosa do transporte até a entrega"
     ],
     service4Name: "Cadeia de Suprimentos & Logística",
@@ -193,13 +196,21 @@ export const translations: Record<Language, TranslationDict> = {
       "Serviços de reabilitação estrutural, pavimentação asfáltica e engenharia de solos",
       "Manutenção corretiva, pintura industrial e instalações hidráulicas de alta escala"
     ],
+    service10Name: "Mobilidade & Táxi por Aplicativo (Yango, Heetch, Bolt)",
+    service10Desc: "Soluções integradas de transporte privado corporativo e pessoal utilizando as principais plataformas digitais registradas (Yango, Heetch, Bolt).",
+    service10Points: [
+      "Operação com motoristas credenciados nas principais capitais de províncias",
+      "Faturamento unificado de viagens corporativas e frotas dedicadas",
+      "Logística de mobilidade ágil de tripulações entre aeroportos, portos e hotéis",
+      "Disponibilidade 24/7 com suporte monitorado em tempo real e veículos modernos"
+    ],
     
     statsTitle: "Cahota em Números",
     statsVessels: "Embarcações Atendidas",
     statsReliability: "Confiabilidade de Entrega",
     statsSupport: "Suporte Técnico Ativo",
     
-    clientsTitle: "Empresas que Confiam",
+    clientsTitle: "Parceiros que Confiam",
     clientsSubtitle: "Temos o orgulho de apoiar alguns dos principais operadores logísticos e de navegação de Angola.",
     clientsNote: "Comprometidos com padrões internacionais e processos de auditoria rigorosos de ponta a ponta.",
     
@@ -207,14 +218,14 @@ export const translations: Record<Language, TranslationDict> = {
     quoteSubtitle: "Preencha o formulário abaixo para receber uma proposta comercial em até 24 horas. Focado em agilidade operacional.",
     quoteFormName: "Nome do Solicitante / Cargo",
     quoteFormEmail: "Email Corporativo",
-    quoteFormPhone: "Telefone de Contato",
+    quoteFormPhone: "Telefone de Contacto",
     quoteFormCompany: "Empresa / Nome do Navio",
     quoteFormService: "Serviço Solicitado",
     quoteFormUrgency: "Grau de Urgência",
     quoteFormDetails: "Detalhes do Pedido & Especificações Técnicas",
     quoteFormSubmit: "Enviar Pedido de Cotação",
     quoteSuccessTitle: "Pedido Recebido com Sucesso!",
-    quoteSuccessMessage: "Obrigado por contactar a CAHOTA LDA. A nossa equipe comercial já está a processar a sua solicitação de suprimentos/serviços e responderá em até 12 horas.",
+    quoteSuccessMessage: "Obrigado por contactar a CAHOTA LDA. A nossa equipa comercial já está a processar a sua solicitação de suprimentos/serviços e responderá em até 12 horas.",
     
     vendorTitle: "Registo de Fornecedor Aprovado",
     vendorSubtitle: "Facilitamos o processo de homologação técnica da nossa empresa no seu portal de compras.",
@@ -222,24 +233,24 @@ export const translations: Record<Language, TranslationDict> = {
     vendorNifText: "NIF Legal: 5001273264",
     vendorDocIntro: "Somos a CAHOTA LDA, empresa de direito angolano com sede no Ed. W5, Centralidade do Kilamba, Luanda, operando nos setores de construção civil, marítimo, portuário e offshore. Apresentamos este documento para expressar formalmente o nosso interesse em ser registados como um fornecedor oficial aprovado para apoiar as vossas operações contínuas em Angola.",
     vendorDocObjective: "O nosso escopo abrange o fornecimento rápido de Ship Chandling, Suprimentos Técnicos Industriais de alta precisão, Provisões de Alimentos de excelente qualidade e soluções de Logística integrada.",
-    vendorDocLetterHeader: "À Equipe de Gestão de Fornecedores / Compras",
+    vendorDocLetterHeader: "À Equipa de Gestão de Fornecedores / Compras",
     vendorContactCTA: "Contactar Gestor e Enviar NIF",
     
-    contactTitle: "Fale Conosco",
+    contactTitle: "Fale Connosco",
     contactSubtitle: "Estamos estrategicamente posicionados no Kilamba (Luanda) e no Lobito para responder imediatamente às suas necessidades.",
     contactAddress: "Morada da Sede: Ed. W5, Centralidade do Kilamba, Luanda - Angola",
     contactPhone: "Telefones",
     contactEmail: "Email Geral",
     contactHours: "Horário de Atendimento",
     contactHoursValue: "Segunda a Sábado - 24/7 para Emergências e Abastecimento",
-    officeLobito: "Sede - Centralidade do Kilamba, Luanda",
-    officeLuanda: "Filial - Lobito, Benguela"
+    officeHeadOffice: "Sede - Centralidade do Kilamba, Luanda",
+    officeBranchOffice: "Filial - Lobito, Benguela"
   },
   en: {
     navHome: "Home",
     navServices: "Services",
     navAbout: "About Us",
-    navClients: "Clients",
+    navClients: "Partners",
     navQuote: "Request Quote",
     navContact: "Contacts",
     
@@ -332,13 +343,21 @@ export const translations: Record<Language, TranslationDict> = {
       "Structural rehabilitation, asphalt concrete laying, and soil stability services",
       "Corrective repairs, industrial protection paints, and water/drainage plumbing"
     ],
+    service10Name: "App-Based Ride-Hailing & Taxi Service (Yango, Heetch, Bolt)",
+    service10Desc: "Comprehensive corporate and personal ride-hailing solutions using registered leading digital platforms (Yango, Heetch, Bolt).",
+    service10Points: [
+      "Vetted, professional local drivers in major city centers and capital portals",
+      "Unified billing for corporate travel, employees, and dedicated fleets",
+      "Fast crew transit logistics connecting airports, seaport terminals, and hotels",
+      "24/7 availability backed by real-time tracking, custom support, and modern vehicles"
+    ],
     
     statsTitle: "Cahota in Numbers",
     statsVessels: "Vessels Served",
     statsReliability: "Delivery Reliability Rate",
     statsSupport: "Active Technical Support",
     
-    clientsTitle: "Trusted By Global Operators",
+    clientsTitle: "Trusted Partners",
     clientsSubtitle: "We are proud to support some of the leading logistics, offshore, and shipping lines operating in Angola.",
     clientsNote: "Committed to international standards and rigorous end-to-end procurement compliance.",
     
@@ -371,7 +390,7 @@ export const translations: Record<Language, TranslationDict> = {
     contactEmail: "General Email",
     contactHours: "Operating Hours",
     contactHoursValue: "Monday to Saturday - 24/7 for Emergencies & Supplies",
-    officeLobito: "Sede - Centralidade do Kilamba, Luanda",
-    officeLuanda: "Branch - Lobito, Benguela"
+    officeHeadOffice: "Head Office - Centralidade do Kilamba, Luanda",
+    officeBranchOffice: "Branch Office - Lobito, Benguela"
   }
 };

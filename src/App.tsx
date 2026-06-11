@@ -18,7 +18,7 @@ import Certifications from './components/Certifications';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function App() {
-  const [currentLang, setCurrentLang] = useState<Language>('pt');
+  const [currentLang, setCurrentLang] = useState<Language>('en');
   const [selectedService, setSelectedService] = useState<string>('');
   const [activePage, setActivePage] = useState<string>('home');
 
@@ -156,7 +156,7 @@ export default function App() {
                   {currentLang === 'pt' ? 'CONFIABILIDADE' : 'TRUST & COMPLIANCE'}
                 </span>
                 <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
-                  {currentLang === 'pt' ? 'Nossos Clientes e Parceiros' : 'Clients & Partners'}
+                  {currentLang === 'pt' ? 'Nossos Parceiros' : 'Our Partners'}
                 </h1>
                 <div className="h-1 w-12 bg-teal-500 mx-auto my-4 rounded"></div>
                 <p className="mt-4 text-slate-600 text-sm max-w-2xl mx-auto leading-relaxed">

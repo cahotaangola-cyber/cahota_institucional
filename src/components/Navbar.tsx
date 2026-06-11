@@ -69,7 +69,7 @@ export default function Navbar({ currentLang, onLanguageChange, activePage, onCh
                 CAHOTA <span className="text-teal-600 font-extrabold text-[10px] border border-teal-500/30 px-1 rounded ml-1 bg-teal-50">LDA</span>
               </span>
               <span className="text-[8px] text-slate-500 font-mono uppercase tracking-widest block -mt-0.5">
-                {currentLang === 'pt' ? 'Comércio & Prestação de Serviços' : 'Marine & Industrial Supplies'}
+                {currentLang === 'pt' ? 'Comércio & Prestação de Serviços' : 'Commerce and service provision'}
               </span>
             </div>
           </div>

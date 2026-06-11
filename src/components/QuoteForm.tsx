@@ -236,6 +236,7 @@ export default function QuoteForm({ currentLang, selectedService, onServiceReset
                         <option value="Insurance Services">{currentLang === 'pt' ? 'Serviços de Seguros' : 'Insurance Services'}</option>
                         <option value="Occupational Health & Medicine">{currentLang === 'pt' ? 'Medicina Ocupacional' : 'Occupational Health & Medicine'}</option>
                         <option value="Civil Construction & Maintenance">{currentLang === 'pt' ? 'Construção Civil' : 'Civil Construction & Maintenance'}</option>
+                        <option value="App-Based Ride-Hailing">{currentLang === 'pt' ? 'Táxi por Aplicativo' : 'App-Based Ride-Hailing'}</option>
                       </select>
                     </div>
  

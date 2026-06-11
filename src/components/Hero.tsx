@@ -149,6 +149,8 @@ export default function Hero({ currentLang, onNavigateToQuote, onNavigateToServi
                   alt="CAHOTA LDA Terminal Supply" 
                   className="w-full h-[320px] sm:h-[400px] lg:h-[480px] object-cover object-center transform group-hover:scale-105 transition-transform duration-700 pointer-events-none"
                   referrerPolicy="no-referrer"
+                  fetchPriority="high"
+                  loading="eager"
                 />
                 
                 {/* Visual Image Overlay */}

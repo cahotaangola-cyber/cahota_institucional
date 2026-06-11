@@ -34,7 +34,9 @@ export default function Footer({ currentLang, onNavigateHome }: FooterProps) {
             <Logo size="sm" showText={false} className="h-8 w-auto text-teal-600" />
             <div>
               <span className="text-slate-900 font-black text-lg tracking-wider">CAHOTA <span className="text-teal-600 text-xs font-bold">LDA</span></span>
-              <p className="text-[9px] uppercase font-mono tracking-tighter text-slate-450">Comércio & Prestação de Serviços</p>
+              <p className="text-[9px] uppercase font-mono tracking-tighter text-slate-450">
+                {currentLang === 'pt' ? 'Comércio & Prestação de Serviços' : 'Commerce and service provision'}
+              </p>
             </div>
           </div>
 

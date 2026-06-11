@@ -127,7 +127,7 @@ export default function ContactSection({ currentLang }: ContactSectionProps) {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-slate-950 flex items-center gap-2">
-                      {t.officeLobito}
+                      {t.officeHeadOffice}
                       <span className="h-1.5 w-1.5 bg-emerald-500 rounded-full " />
                     </h4>
                     <p className="text-xs text-slate-500 mt-1 leading-relaxed">
@@ -150,7 +150,7 @@ export default function ContactSection({ currentLang }: ContactSectionProps) {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-slate-950 flex items-center gap-2">
-                      {t.officeLuanda}
+                      {t.officeBranchOffice}
                     </h4>
                     <p className="text-xs text-slate-500 mt-1 leading-relaxed">
                       {currentLang === 'pt' 

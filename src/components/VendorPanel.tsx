@@ -152,6 +152,7 @@ Contactos: +244 929 071 923 / +244 935 325 219`;
                 alt="CAHOTA Offshore and Ship Chandling Supplies" 
                 className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-[1.03] transition-transform duration-500 pointer-events-none"
                 referrerPolicy="no-referrer"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/25 to-transparent" />
               
@@ -201,7 +202,7 @@ Contactos: +244 929 071 923 / +244 935 325 219`;
               </div>
  
               <div className="pt-4 border-t border-slate-200 flex items-center justify-center">
-                <Logo size="sm" showText={true} textColor="text-slate-600" subtitleColor="text-slate-500" className="opacity-90 max-w-[155px]" />
+                <Logo size="sm" showText={true} textColor="text-slate-600" subtitleColor="text-slate-500" currentLang={currentLang} className="opacity-90 max-w-[155px]" />
               </div>
             </div>
  
