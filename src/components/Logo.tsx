@@ -11,151 +11,315 @@ interface LogoProps {
 export default function Logo({ 
   className = '', 
   showText = true, 
-  textColor = 'text-white', 
-  subtitleColor = 'text-slate-400',
+  textColor = 'text-slate-800', 
+  subtitleColor = 'text-slate-500',
   size = 'md' 
 }: LogoProps) {
-  // Dimensions based on size
+  // Dimensions based on size for complete logo
   const dimensions = {
-    sm: { width: 140, height: 90, iconHeight: 50 },
-    md: { width: 220, height: 145, iconHeight: 75 },
-    lg: { width: 320, height: 210, iconHeight: 110 },
-    xl: { width: 440, height: 290, iconHeight: 150 },
+    sm: { width: 155, height: 50 },
+    md: { width: 240, height: 80 },
+    lg: { width: 360, height: 120 },
+    xl: { width: 480, height: 160 },
   };
 
   const selectedSize = dimensions[size];
 
-  // Raw logo shape colors
-  const tealColor = '#27B5B5';
-  const greenColor = '#10B981';
-  const amberColor = '#F59E0B';
+  // Hexagon radius and center positions
+  const r = 34; // Radius of hexagons
+  const dx = r * 0.866;
+  const h = r / 2;
+
+  // Gradients and Bevels helpers
+  const renderHexagon3D = (
+    cx: number, 
+    cy: number, 
+    lightId: string, 
+    medId: string, 
+    darkId: string, 
+    rimColor: string
+  ) => {
+    const pt = (x: number, y: number) => `${cx + x},${cy + y}`;
+    return (
+      <g className="transition-transform duration-300 hover:scale-[1.03]" style={{ transformOrigin: `${cx}px ${cy}px` }}>
+        {/* Outer subtle drop shadow */}
+        <polygon 
+          points={`${pt(0, -r-1.5)} ${pt(dx+1.5, -h-0.7)} ${pt(dx+1.5, h+0.7)} ${pt(0, r+1.5)} ${pt(-dx-1.5, h+0.7)} ${pt(-dx-1.5, -h-0.7)}`} 
+          fill="#000000" 
+          opacity="0.1"
+        />
+        {/* Outer crisp metallic rim */}
+        <polygon 
+          points={`${pt(0, -r-0.5)} ${pt(dx+0.5, -h-0.25)} ${pt(dx+0.5, h+0.25)} ${pt(0, r+0.5)} ${pt(-dx-0.5, h+0.25)} ${pt(-dx-0.5, -h-0.25)}`} 
+          fill={rimColor} 
+          opacity="0.85"
+        />
+        {/* Dark inner divider border */}
+        <polygon 
+          points={`${pt(0, -r)} ${pt(dx, -h)} ${pt(dx, h)} ${pt(0, r)} ${pt(-dx, h)} ${pt(-dx, -h)}`} 
+          fill="#1e293b" 
+        />
+        
+        {/* 3D Isometric Faces meeting in the center */}
+        {/* Face 1: Top (v6 -> v1 -> v2 -> Center) */}
+        <polygon 
+          points={`${pt(0, 0)} ${pt(-dx+0.5, -h+0.25)} ${pt(0, -r+0.5)} ${pt(dx-0.5, -h+0.25)}`} 
+          fill={`url(#${lightId})`} 
+        />
+        {/* Face 2: Right (v2 -> v3 -> v4 -> Center) */}
+        <polygon 
+          points={`${pt(0, 0)} ${pt(dx-0.5, -h+0.5)} ${pt(dx-0.5, h-0.5)} ${pt(0, r-0.5)}`} 
+          fill={`url(#${medId})`} 
+        />
+        {/* Face 3: Left (v4 -> v5 -> v6 -> Center) */}
+        <polygon 
+          points={`${pt(0, 0)} ${pt(0, r-0.5)} ${pt(-dx+0.5, h-0.5)} ${pt(-dx+0.5, -h+0.5)}`} 
+          fill={`url(#${darkId})`} 
+        />
+        
+        {/* Radial highlight for sheen */}
+        <circle cx={cx - 5} cy={cy - 10} r={r * 0.4} fill="url(#sheenGrad)" opacity="0.45" pointerEvents="none" />
+        <circle cx={cx} cy={cy} r={1.5} fill="#ffffff" opacity="0.75" pointerEvents="none" />
+      </g>
+    );
+  };
 
   if (!showText) {
-    // Only return the chevron icon
+    // Return ONLY the clustered ascending hexagons, tight viewBox for immediate scaling in nav/footer
     return (
       <svg
         className={className}
-        width={selectedSize.iconHeight * 1.5}
-        height={selectedSize.iconHeight}
-        viewBox="0 0 300 200"
+        width={36}
+        height={36}
+        viewBox="30 25 210 245"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* UPPER CHEVRONS (pointing UP) */}
-        {/* Left Teal Upper */}
-        <path
-          d="M30 75L75 30L120 75L100 75L75 50L50 75H30Z"
-          fill={tealColor}
-        />
-        {/* Middle Green Upper */}
-        <path
-          d="M105 75L150 30L195 75L175 75L150 50L125 75H105Z"
-          fill={greenColor}
-        />
-        {/* Right Amber Upper */}
-        <path
-          d="M180 75L225 30L270 75L250 75L225 50L200 75H180Z"
-          fill={amberColor}
-        />
+        <defs>
+          {/* Gradients */}
+          {/* Sheen */}
+          <radialGradient id="sheenGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#ffffff" />
+            <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
+          </radialGradient>
 
-        {/* LOWER CHEVRONS (pointing DOWN) */}
-        {/* Left Teal Lower */}
-        <path
-          d="M30 115L75 160L120 115L100 115L75 140L50 115H30Z"
-          fill={tealColor}
-        />
-        {/* Middle Green Lower */}
-        <path
-          d="M105 115L150 160L195 115L175 115L150 140L125 115H105Z"
-          fill={greenColor}
-        />
-        {/* Right Amber Lower */}
-        <path
-          d="M180 115L225 160L270 115L250 115L225 140L200 115H180Z"
-          fill={amberColor}
-        />
+          {/* Teal Hexagon */}
+          <linearGradient id="tealLight" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#81e6d9" />
+            <stop offset="100%" stopColor="#2ca5ab" />
+          </linearGradient>
+          <linearGradient id="tealMedium" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#2ca5ab" />
+            <stop offset="100%" stopColor="#1c7c82" />
+          </linearGradient>
+          <linearGradient id="tealDark" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#1c7c82" />
+            <stop offset="100%" stopColor="#0d3f42" />
+          </linearGradient>
+
+          {/* Green Hexagon */}
+          <linearGradient id="greenLight" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#a3e635" />
+            <stop offset="100%" stopColor="#4da32a" />
+          </linearGradient>
+          <linearGradient id="greenMedium" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#4da32a" />
+            <stop offset="100%" stopColor="#2f6e1a" />
+          </linearGradient>
+          <linearGradient id="greenDark" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#2f6e1a" />
+            <stop offset="100%" stopColor="#15360a" />
+          </linearGradient>
+
+          {/* Bronze Hexagon */}
+          <linearGradient id="bronzeLight" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#f97316" />
+            <stop offset="100%" stopColor="#b44b15" />
+          </linearGradient>
+          <linearGradient id="bronzeMedium" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#b44b15" />
+            <stop offset="100%" stopColor="#87350d" />
+          </linearGradient>
+          <linearGradient id="bronzeDark" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#87350d" />
+            <stop offset="100%" stopColor="#421a05" />
+          </linearGradient>
+
+          {/* Gold Hexagon */}
+          <linearGradient id="goldLight" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#fef08a" />
+            <stop offset="100%" stopColor="#ca8a04" />
+          </linearGradient>
+          <linearGradient id="goldMedium" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#ca8a04" />
+            <stop offset="100%" stopColor="#915f02" />
+          </linearGradient>
+          <linearGradient id="goldDark" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#915f02" />
+            <stop offset="100%" stopColor="#442c01" />
+          </linearGradient>
+        </defs>
+
+        {/* Diagonal ascending connections */}
+        <path d="M 80,185 L 140,135 M 140,135 L 200,85" stroke="#94a3b8" strokeWidth="2.5" strokeDasharray="3 3" opacity="0.3" strokeLinecap="round" />
+        <path d="M 80,185 A 35 35 0 0 1 140,225" stroke="#f97316" strokeWidth="1.5" fill="none" opacity="0.25" />
+
+        {/* 4 Brand Metallic Hexagons */}
+        {/* Bronze (Bottom-Left) */}
+        {renderHexagon3D(80, 185, 'bronzeLight', 'bronzeMedium', 'bronzeDark', '#ea580c')}
+        
+        {/* Gold (Bottom-Middle-Right) */}
+        {renderHexagon3D(140, 225, 'goldLight', 'goldMedium', 'goldDark', '#eab308')}
+
+        {/* Green (Middle-Left) */}
+        {renderHexagon3D(140, 135, 'greenLight', 'greenMedium', 'greenDark', '#84cc16')}
+
+        {/* Teal (Top-Right) */}
+        {renderHexagon3D(200, 85, 'tealLight', 'tealMedium', 'tealDark', '#06b6d4')}
       </svg>
     );
   }
 
   return (
-    <div className={`flex flex-col items-center ${className}`}>
-      {/* Complete Logo with Brand text */}
+    <div className={`flex items-center ${className}`} style={{ width: '100%', maxWidth: selectedSize.width }}>
+      {/* Complete Horizontal Logo featuring left Hexagons cluster and right clean font brand text */}
       <svg
         width="100%"
-        className="max-w-full transition-all duration-300"
-        style={{ height: 'auto', maxHeight: selectedSize.height, aspectRatio: '220/145' }}
-        viewBox="0 0 300 200"
+        style={{ height: 'auto', maxHeight: selectedSize.height, aspectRatio: '340/130' }}
+        viewBox="30 25 340 130"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* UPPER CHEVRONS */}
-        {/* Left Teal Upper */}
-        <path
-          d="M30 70L75 25L120 70L100 70L75 45L50 70H30Z"
-          fill={tealColor}
-        />
-        {/* Middle Green Upper */}
-        <path
-          d="M105 70L150 25L195 70L175 70L150 45L125 70H105Z"
-          fill={greenColor}
-        />
-        {/* Right Amber Upper */}
-        <path
-          d="M180 70L225 25L270 70L250 70L225 45L200 70H180Z"
-          fill={amberColor}
-        />
+        <defs>
+          {/* Glow/Filters */}
+          <filter id="glow-logo" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
 
-        {/* MIDDLE TEXT "CAHOTA" */}
+          <radialGradient id="sheenGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#ffffff" stopOpacity="0.9" />
+            <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
+          </radialGradient>
+
+          {/* Underline Fading Gradient */}
+          <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#475569" stopOpacity="0" />
+            <stop offset="35%" stopColor="#1e293b" stopOpacity="0.85" />
+            <stop offset="85%" stopColor="#94a3b8" stopOpacity="0.1" />
+            <stop offset="100%" stopColor="#cbd5e1" stopOpacity="0" />
+          </linearGradient>
+
+          {/* Teal Gradients */}
+          <linearGradient id="tealLight" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#a5f3fc" />
+            <stop offset="100%" stopColor="#0e7490" />
+          </linearGradient>
+          <linearGradient id="tealMedium" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#0e7490" />
+            <stop offset="100%" stopColor="#083344" />
+          </linearGradient>
+          <linearGradient id="tealDark" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#083344" />
+            <stop offset="100%" stopColor="#020617" />
+          </linearGradient>
+
+          {/* Green Gradients */}
+          <linearGradient id="greenLight" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#bbf7d0" />
+            <stop offset="100%" stopColor="#15803d" />
+          </linearGradient>
+          <linearGradient id="greenMedium" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#15803d" />
+            <stop offset="100%" stopColor="#14532d" />
+          </linearGradient>
+          <linearGradient id="greenDark" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#14532d" />
+            <stop offset="100%" stopColor="#051c0c" />
+          </linearGradient>
+
+          {/* Bronze Gradients */}
+          <linearGradient id="bronzeLight" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#ffedd5" />
+            <stop offset="100%" stopColor="#c2410c" />
+          </linearGradient>
+          <linearGradient id="bronzeMedium" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#c2410c" />
+            <stop offset="100%" stopColor="#7c2d12" />
+          </linearGradient>
+          <linearGradient id="bronzeDark" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#7c2d12" />
+            <stop offset="100%" stopColor="#2a0800" />
+          </linearGradient>
+
+          {/* Gold Gradients */}
+          <linearGradient id="goldLight" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#fef9c3" />
+            <stop offset="100%" stopColor="#a16207" />
+          </linearGradient>
+          <linearGradient id="goldMedium" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#a16207" />
+            <stop offset="100%" stopColor="#713f12" />
+          </linearGradient>
+          <linearGradient id="goldDark" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#713f12" />
+            <stop offset="100%" stopColor="#1c0d02" />
+          </linearGradient>
+        </defs>
+
+        {/* LEFT COMPACT HEXAGONS CLUSTER */}
+        <g transform="translate(-10, -5)">
+          {/* Subtle connecting lines */}
+          <path d="M 60,103 L 95,75 M 95,75 L 130,47" stroke="#cbd5e1" strokeWidth="1.5" opacity="0.35" />
+          
+          {/* Bronze (Bottom-Left) */}
+          {renderHexagon3D(60, 103, 'bronzeLight', 'bronzeMedium', 'bronzeDark', '#c2410c')}
+          
+          {/* Gold (Bottom-Middle-Right) */}
+          {renderHexagon3D(95, 126, 'goldLight', 'goldMedium', 'goldDark', '#a16207')}
+
+          {/* Green (Middle-Left) */}
+          {renderHexagon3D(95, 75, 'greenLight', 'greenMedium', 'greenDark', '#15803d')}
+
+          {/* Teal (Top-Right) */}
+          {renderHexagon3D(130, 47, 'tealLight', 'tealMedium', 'tealDark', '#0e7490')}
+        </g>
+
+        {/* RIGHT BRAND TEXTS "CAHOTA" & "COMERCIO E PRESTAÇÃO..."" */}
+        {/* Main Title Wordmark */}
         <text
           x="150"
-          y="110"
-          textAnchor="middle"
+          y="78"
           fill="currentColor"
           className={textColor}
           style={{
-            fontFamily: '"Inter", sans-serif',
+            fontFamily: '"Inter", "Montserrat", system-ui, sans-serif',
             fontSize: '34px',
-            fontWeight: '300',
-            letterSpacing: '5px',
+            fontWeight: '900',
+            letterSpacing: '2px',
           }}
         >
           CAHOTA
         </text>
 
-        {/* LOWER CHEVRONS */}
-        {/* Left Teal Lower */}
-        <path
-          d="M30 120L75 165L120 120L100 120L75 145L50 120H30Z"
-          fill={tealColor}
-        />
-        {/* Middle Green Lower */}
-        <path
-          d="M105 120L150 165L195 120L175 120L150 145L125 120H105Z"
-          fill={greenColor}
-        />
-        {/* Right Amber Lower */}
-        <path
-          d="M180 120L225 165L270 120L250 120L225 145L200 120H180Z"
-          fill={amberColor}
-        />
-
-        {/* SUBTITLE */}
+        {/* Subtitle wording */}
         <text
-          x="150"
-          y="190"
-          textAnchor="middle"
+          x="151"
+          y="102"
           fill="currentColor"
           className={subtitleColor}
           style={{
-            fontFamily: '"Inter", sans-serif',
-            fontSize: '11px',
+            fontFamily: '"Inter", system-ui, sans-serif',
+            fontSize: '7.8px',
             fontWeight: '600',
             letterSpacing: '1px',
           }}
         >
-          COMÉRCIO & PRESTAÇÃO DE SERVIÇOS
+          COMERCIO E PRESTAÇÃO DE SERVIÇOS LDA
         </text>
+
+        {/* Reflection Gradient Underline */}
+        <rect x="151" y="110" width="220" height="1.8" fill="url(#lineGrad)" rx="1" />
       </svg>
     </div>
   );

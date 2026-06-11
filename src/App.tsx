@@ -14,6 +14,7 @@ import VendorPanel from './components/VendorPanel';
 import QuoteForm from './components/QuoteForm';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
+import Certifications from './components/Certifications';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function App() {
@@ -86,6 +87,9 @@ export default function App() {
             
             {/* Main Stats layout */}
             <Stats currentLang={currentLang} />
+
+            {/* Official certifications board */}
+            <Certifications currentLang={currentLang} />
 
             {/* Subpage Info */}
             <div className="py-16 bg-white relative border-t border-slate-200">

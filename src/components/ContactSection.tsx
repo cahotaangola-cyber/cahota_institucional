@@ -10,8 +10,8 @@ export default function ContactSection({ currentLang }: ContactSectionProps) {
   const t = translations[currentLang];
 
   const phonesList = [
-    { number: "+244 929 071 923", label: currentLang === 'pt' ? 'Escritório Lobito (Sede)' : 'Lobito HQ Office', whatsapp: "244929071923" },
-    { number: "+244 935 325 219", label: currentLang === 'pt' ? 'Atendimento Luanda / Marítimo' : 'Luanda Branch / Marine Desk', whatsapp: "244935325219" }
+    { number: "+244 929 071 923", label: currentLang === 'pt' ? 'Escritório Luanda (Sede)' : 'Luanda HQ Office', whatsapp: "244929071923" },
+    { number: "+244 935 325 219", label: currentLang === 'pt' ? 'Atendimento Lobito / Filial Marítima' : 'Lobito Branch / Marine Desk', whatsapp: "244935325219" }
   ];  return (
     <section id="contact" className="py-24 bg-white relative border-t border-slate-200">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-[140px] pointer-events-none" />
@@ -131,11 +131,11 @@ export default function ContactSection({ currentLang }: ContactSectionProps) {
                       <span className="h-1.5 w-1.5 bg-emerald-500 rounded-full " />
                     </h4>
                     <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                      Av. Governador Sousa Coutinho, Cotel, Lobito, Benguela, Angola.
+                      Ed. W5, Centralidade do Kilamba, Luanda - Angola.
                     </p>
                     <p className="text-[10px] text-amber-600 font-semibold font-mono mt-1.5 flex items-center gap-1">
                       <MapPin className="h-3 w-3" />
-                      Estrada Nacional Nº 100 (Central Principal)
+                      {currentLang === 'pt' ? 'Sede Administrativa Geral' : 'General Head Office'}
                     </p>
                   </div>
                 </div>
@@ -153,11 +153,13 @@ export default function ContactSection({ currentLang }: ContactSectionProps) {
                       {t.officeLuanda}
                     </h4>
                     <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                      Representação Técnica e Apoio Logístico Integrado na Província de Luanda.
+                      {currentLang === 'pt' 
+                        ? 'Filial e Apoio de Logística de Ship Chandling e Suporte Técnico em Benguela.' 
+                        : 'Maritime Branch, Ship Chandling Supply & Technical Support Desk in Benguela.'}
                     </p>
                     <p className="text-[10px] text-blue-600 font-semibold font-mono mt-1.5 flex items-center gap-1">
                       <Anchor className="h-3 w-3" />
-                      Porto de Luanda & Zona Offshore
+                      {currentLang === 'pt' ? 'Porto do Lobito & Estrada Nacional Nº 100' : 'Port of Lobito & National Highway No. 100'}
                     </p>
                   </div>
                 </div>

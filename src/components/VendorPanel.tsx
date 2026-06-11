@@ -20,7 +20,7 @@ Para: Departamento de Aprovisionamento / Equipa de Compras de ${displayCompany}
 
 Prezada Equipe,
 
-A CAHOTA LDA é uma empresa angolana sediada no Lobito, localizada na Estrada Nacional Nº 100, com representação ativa na Província de Luanda. Operamos há mais de três (3) anos no fornecimento técnico qualificado e na prestação de serviços especializados aos setores marítimo, offshore e industrial angolano.
+A CAHOTA LDA é uma empresa angolana com sede em Luanda, no Ed. W5, Centralidade do Kilamba, com filial operacional ativa em Benguela (Lobito) e nos principais portos do país. Operamos no fornecimento técnico qualificado e na prestação de serviços especializados, abrangendo construção civil, suprimentos e logística aos setores marítimo, offshore e industrial angolano.
 
 O nosso escopo de atuação inclui:
 1. Ship Chandling (Material de Convés, Cabina e Peças Homologadas)
@@ -183,7 +183,7 @@ Contactos: +244 929 071 923 / +244 935 325 219`;
  
                   <div className="bg-slate-50 p-2.5 rounded border border-slate-200">
                     <span className="text-slate-400 text-[9px] block uppercase">HQ (Sede)</span>
-                    <span className="text-slate-800 font-semibold">Lobito, Benguela</span>
+                    <span className="text-slate-800 font-semibold truncate block">Luanda, Angola</span>
                   </div>
  
                   <div className="bg-slate-50 p-2.5 rounded border border-slate-200">

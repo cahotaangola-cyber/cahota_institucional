@@ -42,7 +42,7 @@ export default function Footer({ currentLang, onNavigateHome }: FooterProps) {
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs font-mono text-slate-500">
             <span>NIF: 5001273264</span>
             <span className="text-slate-300">•</span>
-            <span>Est. 2023 - Lobito, Benguela</span>
+            <span>Est. 2022 - Kilamba, Luanda</span>
             <span className="text-slate-300">•</span>
             <span className="text-teal-600 font-bold">www.cahota.ao</span>
           </div>

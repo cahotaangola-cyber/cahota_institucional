@@ -162,7 +162,7 @@ export default function Hero({ currentLang, onNavigateToQuote, onNavigateToServi
                     </div>
                     <div>
                       <p className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">CAHOTA LDA</p>
-                      <p className="text-xs font-bold text-slate-800">Lobito • Luanda • Angola</p>
+                      <p className="text-xs font-bold text-slate-800">Luanda • Lobito • Angola</p>
                     </div>
                   </div>
                   <div className="text-[10px] font-mono text-slate-500 bg-slate-50 py-1 px-2.5 rounded border border-slate-200">
@@ -174,8 +174,8 @@ export default function Hero({ currentLang, onNavigateToQuote, onNavigateToServi
             
             {/* Secondary Floating Port Activity Indicator */}
             <div className="absolute -top-4 -right-4 bg-white/95 border border-slate-200 rounded-lg py-2 px-3.5 shadow-md hidden sm:flex items-center gap-2">
-              <span className="text-[10px] text-teal-600 font-bold uppercase tracking-widest">Lobito Port</span>
-              <span className="text-xs text-slate-700">Base Principal</span>
+              <span className="text-[10px] text-teal-600 font-bold uppercase tracking-widest">{currentLang === 'pt' ? 'Porto de Luanda & Lobito' : 'Luanda & Lobito Ports'}</span>
+              <span className="text-xs text-slate-700">{currentLang === 'pt' ? 'Cobertura Nacional' : 'National Coverage'}</span>
             </div>
           </motion.div>
 

@@ -112,12 +112,12 @@ export const translations: Record<Language, TranslationDict> = {
     
     aboutTitle: "Apresentação Corporativa",
     aboutSubtitle: "Operando com padrões de excelência há mais de 3 anos nos principais portos de Angola.",
-    aboutText1: "A CAHOTA LDA é uma empresa angolana sediada no Lobito, estrategicamente localizada na Estrada Nacional Nº 100, com representação ativa na província de Luanda. Desde 2022 a fornecer suprimentos técnicos qualificados e serviços especializados de alto nível.",
+    aboutText1: "A CAHOTA LDA é uma empresa angolana com sede em Luanda, estrategicamente localizada no Ed. W5, Centralidade do Kilamba, com representação activa nos principais portos e províncias do país. Desde 2022 a fornecer suprimentos técnicos qualificados e serviços especializados de alto nível.",
     aboutText2: "A nossa missão é garantir a continuidade das suas operações marítimas e industriais através de entregas pontuais, conformidade com os mais rigorosos padrões de segurança internacional e assistência técnica contínua. Nos destacamos pela eficiência logística e suporte pós-venda inigualável.",
     aboutYears: "3+",
     aboutYearsText: "Anos de Operação Sólida em Angola",
     aboutLocationTitle: "Presença Estratégica",
-    aboutLocationText: "Benguela (Sede no Lobito) & Representação em Luanda",
+    aboutLocationText: "Luanda (Sede no Kilamba) & Representação no Lobito e principais portos",
     
     servicesTitle: "Nossas Áreas de Atuação",
     servicesSubtitle: "Conheça o nosso escopo completo de suprimentos e serviços técnicos especializados.",
@@ -220,20 +220,20 @@ export const translations: Record<Language, TranslationDict> = {
     vendorSubtitle: "Facilitamos o processo de homologação técnica da nossa empresa no seu portal de compras.",
     vendorDocHeading: "Carta Oficial de Apresentação (Gerada Dinamicamente)",
     vendorNifText: "NIF Legal: 5001273264",
-    vendorDocIntro: "Somos a CAHOTA LDA, empresa de direito angolano com sede no Lobito operando nos setores marítimo, portuário e offshore. Apresentamos este documento para expressar formalmente o nosso interesse em ser registados como um fornecedor oficial aprovado para apoiar as vossas operações contínuas em Angola.",
+    vendorDocIntro: "Somos a CAHOTA LDA, empresa de direito angolano com sede no Ed. W5, Centralidade do Kilamba, Luanda, operando nos setores de construção civil, marítimo, portuário e offshore. Apresentamos este documento para expressar formalmente o nosso interesse em ser registados como um fornecedor oficial aprovado para apoiar as vossas operações contínuas em Angola.",
     vendorDocObjective: "O nosso escopo abrange o fornecimento rápido de Ship Chandling, Suprimentos Técnicos Industriais de alta precisão, Provisões de Alimentos de excelente qualidade e soluções de Logística integrada.",
     vendorDocLetterHeader: "À Equipe de Gestão de Fornecedores / Compras",
     vendorContactCTA: "Contactar Gestor e Enviar NIF",
     
     contactTitle: "Fale Conosco",
-    contactSubtitle: "Estamos estrategicamente posicionados no Lobito e Luanda para responder imediatamente às suas necessidades.",
-    contactAddress: "Morada da Sede: Av. Governador Sousa Coutinho, Cotel, Lobito, Benguela, Angola (Estrada Nacional nº 100)",
+    contactSubtitle: "Estamos estrategicamente posicionados no Kilamba (Luanda) e no Lobito para responder imediatamente às suas necessidades.",
+    contactAddress: "Morada da Sede: Ed. W5, Centralidade do Kilamba, Luanda - Angola",
     contactPhone: "Telefones",
     contactEmail: "Email Geral",
     contactHours: "Horário de Atendimento",
-    contactHoursValue: "Segunda a Sábado - 24/7 para Emergências e Abastecimento de Navios",
-    officeLobito: "Sede - Lobito, Benguela",
-    officeLuanda: "Representação - Província de Luanda"
+    contactHoursValue: "Segunda a Sábado - 24/7 para Emergências e Abastecimento",
+    officeLobito: "Sede - Centralidade do Kilamba, Luanda",
+    officeLuanda: "Filial - Lobito, Benguela"
   },
   en: {
     navHome: "Home",
@@ -251,12 +251,12 @@ export const translations: Record<Language, TranslationDict> = {
     
     aboutTitle: "Corporate Presentation",
     aboutSubtitle: "Operating with standards of excellence for over 3 years in the main Angolan ports.",
-    aboutText1: "CAHOTA LDA is an Angolan company based in Lobito, strategically located on National Road No. 100, with additional active representation in Luanda Province. For over three years, we have been supplying qualified technical products and top-tier specialized services.",
+    aboutText1: "CAHOTA LDA is an Angolan company headquartered in Luanda, strategically located at Ed. W5, Centralidade do Kilamba, with active branch representation in the main Angolan ports and provinces. Since 2022, we have been supplying qualified technical products and top-tier services.",
     aboutText2: "Our mission is to guarantee the continuity of your marine and industrial operations through on-time deliveries, compliance with strict international safety standards, and ongoing technical support. We stand out for our supply chain efficiency and matchless after-sales assistance.",
     aboutYears: "3+",
     aboutYearsText: "Years of Solid Operations in Angola",
     aboutLocationTitle: "Strategic Presence",
-    aboutLocationText: "Benguela (Lobito Headquarters) & Luanda Province Representation",
+    aboutLocationText: "Luanda (Kilamba Headquarters) & Branch Office in Lobito, Benguela",
     
     servicesTitle: "Our Areas of Expertise",
     servicesSubtitle: "Explore our complete scope of professional marine and industrial supplies.",
@@ -359,19 +359,19 @@ export const translations: Record<Language, TranslationDict> = {
     vendorSubtitle: "We simplify our vendor onboarding process for your corporate purchasing portal.",
     vendorDocHeading: "Official Presentation Letter (Dynamically Generated)",
     vendorNifText: "Legal NIF (Tax ID): 5001273264",
-    vendorDocIntro: "We are CAHOTA LDA, an Angolan company based in Lobito operating in the marine, port, and offshore sectors. We introduce this letter to formally register our credentials as an approved supplier for your onshore/offshore supply requirements in Angola.",
+    vendorDocIntro: "We are CAHOTA LDA, an Angolan company headquartered at Ed. W5, Centralidade do Kilamba, Luanda, operating in the construction, marine, port, and offshore sectors. We introduce this letter to formally register our credentials as an approved supplier for your onshore/offshore supply requirements in Angola.",
     vendorDocObjective: "Our operational capabilities span reliable Ship Chandling, specialized Industrial/Technical Supplies, safe Food Provisions, and synchronized Logistics.",
     vendorDocLetterHeader: "To the Vendor Management & Procurement Team",
     vendorContactCTA: "Contact Procurement Manager & Send NIF",
     
     contactTitle: "Contact Us",
-    contactSubtitle: "Strategically located in Lobito and Luanda for immediate support and continuous deliveries.",
-    contactAddress: "Head Office: Av. Governor Sousa Coutinho, Cotel, Lobito, Benguela, Angola (National Highway No. 100)",
+    contactSubtitle: "Strategically located in Kilamba (Luanda) and Lobito for immediate support and continuous deliveries.",
+    contactAddress: "Head Office: Ed. W5, Centralidade do Kilamba, Luanda - Angola",
     contactPhone: "Phones",
     contactEmail: "General Email",
     contactHours: "Operating Hours",
-    contactHoursValue: "Monday to Saturday - 24/7 for Emergencies & Ship Abastecimento",
-    officeLobito: "Lobito HQ, Benguela",
-    officeLuanda: "Luanda Representative Office"
+    contactHoursValue: "Monday to Saturday - 24/7 for Emergencies & Supplies",
+    officeLobito: "Sede - Centralidade do Kilamba, Luanda",
+    officeLuanda: "Branch - Lobito, Benguela"
   }
 };
