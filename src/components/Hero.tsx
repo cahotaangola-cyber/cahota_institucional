@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRight, ShieldCheck, Briefcase, Clock, Award } from 'lucide-react';
 import { translations, Language } from '../types';
 import { motion } from 'motion/react';
-import heroImage from '../assets/images/marine_logistics_hero_1781037387912.png';
+import heroImage from '../assets/images/cahota_services_composite_1781346297713.jpg';
 
 interface HeroProps {
   currentLang: Language;
