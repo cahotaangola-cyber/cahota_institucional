@@ -15,28 +15,28 @@ export default function Stats({ currentLang }: StatsProps) {
       icon: <Calendar className="h-7 w-7 text-teal-600" />,
       value: "3+",
       label: currentLang === 'pt' ? 'Anos de Atuação em Angola' : 'Years Operating in Angola',
-      desc: currentLang === 'pt' ? 'Experiência robusta em águas angolanas.' : 'Robust experience in Angolan waters.',
+      desc: currentLang === 'pt' ? 'Experiência robusta em múltiplos setores.' : 'Robust experience in multiple sectors.',
       accent: 'text-teal-600'
     },
     {
       icon: <CheckCircle2 className="h-7 w-7 text-emerald-600" />,
       value: "100%",
-      label: currentLang === 'pt' ? 'Confiabilidade de Suprimentos' : 'Supply Chain Reliability',
-      desc: currentLang === 'pt' ? 'Garantia de entrega perfeita sob contrato.' : 'Guaranteed perfect deliveries under contract.',
+      label: currentLang === 'pt' ? 'Confiabilidade & Qualidade' : 'Reliability & Quality',
+      desc: currentLang === 'pt' ? 'Processamento seguro sob rígido contrato de conformidade.' : 'Secure processing under strict compliance contracts.',
       accent: 'text-emerald-650'
     },
     {
       icon: <Compass className="h-7 w-7 text-amber-600" />,
       value: "24/7",
-      label: currentLang === 'pt' ? 'Suporte em Emergências' : 'Emergency Assistance',
-      desc: currentLang === 'pt' ? 'Prontidão permanente para navios e tripulações.' : 'Always ready for vessel crew and port queries.',
+      label: currentLang === 'pt' ? 'Suporte Geral 24/7' : '24/7 General Support',
+      desc: currentLang === 'pt' ? 'Prontidão permanente para os nossos parceiros comerciais.' : 'Always at your service across all active divisions.',
       accent: 'text-amber-650'
     },
     {
       icon: <Warehouse className="h-7 w-7 text-teal-600" />,
       value: "2+",
-      label: currentLang === 'pt' ? 'Bases de Apoio' : 'Operational Bases',
-      desc: currentLang === 'pt' ? 'Cobertura no Porto de Lobito e Luanda.' : 'Full coverage across Lobito Port and Luanda.',
+      label: currentLang === 'pt' ? 'Escritórios Estratégicos' : 'Strategic Offices',
+      desc: currentLang === 'pt' ? 'Presença física em Luanda (Sede) e Filial no Lobito.' : 'Physically present in Luanda and Lobito branches.',
       accent: 'text-teal-600'
     }
   ];
@@ -72,15 +72,15 @@ export default function Stats({ currentLang }: StatsProps) {
             <ul className="space-y-4 text-slate-600 text-sm">
               <li className="flex gap-3">
                 <CheckCircle2 className="h-5 w-5 text-teal-600 shrink-0" />
-                <span><strong>{currentLang === 'pt' ? 'Conhecimento Local:' : 'Local Knowledge:'}</strong> {currentLang === 'pt' ? 'Profundo entendimento dos trâmites alfandegários e regulamentações marítimas angolanas.' : 'Profounded understanding of Angolan port protocols and custom clearances.'}</span>
+                <span><strong>{currentLang === 'pt' ? 'Atuação Multissetorial:' : 'Multisector Scope:'}</strong> {currentLang === 'pt' ? 'Capacidade técnica comprovada em 10 divisões complementares de negócio, da Engenharia Civil e TI até Seguros e Mobilidade.' : 'Proven operational competence across 10 distinct divisions, from Civil Engineering and IT to Corporate Insurance and Mobility.'}</span>
               </li>
               <li className="flex gap-3">
                 <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0" />
-                <span><strong>{currentLang === 'pt' ? 'Logística Ágil:' : 'Agile Logistics:'}</strong> {currentLang === 'pt' ? 'Frota de apoio terrestre e galpão de armazenamento estratégico no Lobito para despacho rápido.' : 'Ground fleet and strategic warehouse hubs in Lobito for instant ship-side dispatch.'}</span>
+                <span><strong>{currentLang === 'pt' ? 'Presença Regional:' : 'Regional Presence:'}</strong> {currentLang === 'pt' ? 'Suporte em tempo real com sede em Luanda e filial em Lobito/Benguela, oferecendo alcance nacional flexível.' : 'Headquartered in Luanda with active presence in Lobito/Benguela, offering flexible country-wide operational support.'}</span>
               </li>
               <li className="flex gap-3">
                 <CheckCircle2 className="h-5 w-5 text-amber-600 shrink-0" />
-                <span><strong>{currentLang === 'pt' ? 'Suporte Pós-Venda:' : 'After-sales Support:'}</strong> {currentLang === 'pt' ? 'Assistência de engenharia marítima e acompanhamento até a partida do porto.' : 'Marine engineering support and rigorous tracing until vessel port departure.'}</span>
+                <span><strong>{currentLang === 'pt' ? 'Excelência & Pós-Venda:' : 'Excellence & After-sales:'}</strong> {currentLang === 'pt' ? 'Assistência pós-venda contínua, faturamento unificado para frotas de aplicativos e rigor de auditoria.' : 'Continuous user assistance, unified corporate billing for transport platforms, and rigorous procurement compliance.'}</span>
               </li>
             </ul>
           </div>

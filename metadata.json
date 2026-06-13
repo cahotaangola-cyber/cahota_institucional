@@ -1,6 +1,6 @@
 {
   "name": "Cahota Lda",
-  "description": "Website institucional da CAHOTA LDA, empresa angolana especializada em Ship Chandling, Suprimentos Técnicos e Logística para os setores marítimo, offshore e industrial.",
+  "description": "Website institucional da CAHOTA LDA, empresa angolana com atuação multissetorial abrangendo Construção Civil, Tecnologias de Informação, Mobilidade por Aplicativos, Seguros Corporativos e Logística de Suprimentos.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

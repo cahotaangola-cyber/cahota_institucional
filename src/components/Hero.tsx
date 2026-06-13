@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, ShieldCheck, Ship, Clock, Award } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Briefcase, Clock, Award } from 'lucide-react';
 import { translations, Language } from '../types';
 import { motion } from 'motion/react';
 import heroImage from '../assets/images/marine_logistics_hero_1781037387912.png';
@@ -84,7 +84,7 @@ export default function Hero({ currentLang, onNavigateToQuote, onNavigateToServi
                 id="hero-quote-trigger"
                 className="bg-gradient-to-r from-amber-550 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-extrabold px-8 py-4 rounded-xl text-md flex items-center justify-center gap-2.5 shadow-[0_4px_20px_rgba(245,158,11,0.2)] transition-all duration-200 transform hover:scale-[1.01]"
               >
-                <Ship className="h-5 w-5" />
+                <Briefcase className="h-5 w-5" />
                 {t.heroCTAQuote}
                 <ArrowRight className="h-5 w-5" />
               </button>
@@ -117,7 +117,7 @@ export default function Hero({ currentLang, onNavigateToQuote, onNavigateToServi
                 <Clock className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-semibold text-slate-900 text-sm">Suporte 24/7</h4>
-                  <p className="text-xs text-slate-500">Atendimento Marítimo</p>
+                  <p className="text-xs text-slate-500">{currentLang === 'pt' ? 'Múltiplos Setores' : 'Multi-sector Care'}</p>
                 </div>
               </div>
  

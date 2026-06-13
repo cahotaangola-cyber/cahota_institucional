@@ -10,6 +10,7 @@ import Hero from './components/Hero';
 import Stats from './components/Stats';
 import Services from './components/Services';
 import Clients from './components/Clients';
+import LogoCarousel from './components/LogoCarousel';
 import VendorPanel from './components/VendorPanel';
 import QuoteForm from './components/QuoteForm';
 import ContactSection from './components/ContactSection';
@@ -60,6 +61,8 @@ export default function App() {
             />
             {/* Quick overview of key stats and corporate identity */}
             <Stats currentLang={currentLang} />
+            {/* Dynamic visual partners logo carousel */}
+            <LogoCarousel currentLang={currentLang} />
           </div>
         );
 
