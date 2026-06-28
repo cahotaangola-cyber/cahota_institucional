@@ -16,6 +16,7 @@ import QuoteForm from './components/QuoteForm';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import Certifications from './components/Certifications';
+import ChatWidget from './components/ChatWidget';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function App() {
@@ -216,8 +217,8 @@ export default function App() {
                 <div className="h-1 w-12 bg-teal-500 mx-auto my-4 rounded"></div>
                 <p className="mt-4 text-slate-600 text-sm max-w-2xl mx-auto leading-relaxed">
                   {currentLang === 'pt' 
-                    ? 'Contate o nosso suporte de emergência 24 horas ou visite os nossos escritórios estratégicos no Lobito (HQ) e Luanda.' 
-                    : 'Reach out to our round-the-clock emergency desk or visit our strategic locations in Lobito (HQ) and Luanda.'}
+                    ? 'Contate o nosso suporte de emergência 24 horas ou visite os nossos escritórios estratégicos em Luanda (Sede) e no Lobito.' 
+                    : 'Reach out to our round-the-clock emergency desk or visit our strategic locations in Luanda (HQ) and Lobito.'}
                 </p>
               </div>
             </div>
@@ -281,11 +282,11 @@ export default function App() {
       <main className="w-full flex-grow">
         <AnimatePresence mode="wait">
           <motion.div
-            key={activePage}
-            initial={{ opacity: 0, y: 15 }}
+            key={`${activePage}-${currentLang}`}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
-            transition={{ duration: 0.22, ease: 'easeOut' }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
             className="w-full"
           >
             {renderPage()}
@@ -303,6 +304,18 @@ export default function App() {
             behavior: 'instant'
           });
         }}
+      />
+
+      {/* Floating Interactive Live Chat Assistant widget */}
+      <ChatWidget 
+        currentLang={currentLang} 
+        onChangePage={(pageId) => {
+          setActivePage(pageId);
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        }} 
       />
     </div>
   );

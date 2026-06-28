@@ -55,10 +55,6 @@ export default function Footer({ currentLang, onNavigateHome }: FooterProps) {
           <p>
             &copy; {year} CAHOTA LDA. {currentLang === 'pt' ? 'Todos os direitos reservados.' : 'All rights reserved.'}
           </p>
-          
-          <div className="flex items-center gap-1.5 text-slate-400">
-            <span>{currentLang === 'pt' ? 'Setores Offshore, Marítimo e Industrial de Angola' : 'Offshore, Marine & Industrial Sectors of Angola'}</span>
-          </div>
         </div>
 
       </div>

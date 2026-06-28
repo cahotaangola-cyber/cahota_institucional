@@ -124,7 +124,7 @@ export default function Hero({ currentLang, onNavigateToQuote, onNavigateToServi
               <div className="flex items-start gap-2.5 col-span-2 sm:col-span-1" id="hero-trust-presence">
                 <Award className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-semibold text-slate-900 text-sm">Benguela & Luanda</h4>
+                  <h4 className="font-semibold text-slate-900 text-sm">Luanda & Benguela</h4>
                   <p className="text-xs text-slate-500">Presença Integrada</p>
                 </div>
               </div>
