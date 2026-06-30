@@ -45,9 +45,7 @@ jobs:
       # To use this, add FTP_SERVER, FTP_USERNAME, and FTP_PASSWORD to your GitHub Repository Secrets.
       - name: Deploy to WordPress Host via SFTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        if: env.HAS_FTP_SECRETS == 'true'
-        env:
-          HAS_FTP_SECRETS: ${{ secrets.FTP_SERVER != '' && secrets.FTP_USERNAME != '' && secrets.FTP_PASSWORD != '' }}
+        if: ${{ secrets.FTP_SERVER != '' && secrets.FTP_USERNAME != '' && secrets.FTP_PASSWORD != '' }}
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
@@ -60,9 +58,8 @@ jobs:
       # To use this, configure SSH_HOST, SSH_USER, SSH_KEY, and SSH_PORT.
       - name: Deploy to WordPress Host via SSH/Rsync
         uses: easingthemes/ssh-deploy@v5.1.0
-        if: env.HAS_SSH_SECRETS == 'true'
+        if: ${{ secrets.SSH_HOST != '' && secrets.SSH_USER != '' && secrets.SSH_KEY != '' }}
         env:
-          HAS_SSH_SECRETS: ${{ secrets.SSH_HOST != '' && secrets.SSH_USER != '' && secrets.SSH_KEY != '' }}
           SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
           ARGS: "-rlgoDzvC --delete"
           SOURCE: "cahota-theme/"
