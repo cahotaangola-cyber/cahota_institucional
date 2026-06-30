@@ -8,6 +8,6 @@ coverage/
 !.env.example
 
 # WordPress Theme Build Artifacts
-cahota-theme/assets/
+# We must commit cahota-theme/assets/ and screenshot.jpg to GitHub so WP Pusher can deploy them.
+# The cahota-theme.zip is only for manual upload and can remain ignored.
 cahota-theme.zip
-cahota-theme/screenshot.jpg

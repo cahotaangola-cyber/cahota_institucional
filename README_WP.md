@@ -44,6 +44,28 @@ O fluxo de trabalho foi configurado no arquivo `.github/workflows/deploy.yml` pa
 
 ---
 
+## 🔌 Integração e Deploy Automatizado com WP Pusher (Recomendado)
+
+O **WP Pusher** é uma excelente alternativa que permite instalar e atualizar o seu tema WordPress automaticamente a partir do GitHub, diretamente do painel administrativo do WordPress, sem necessitar de FTP, SSH ou chaves de servidores.
+
+### Condições criadas para total compatibilidade com o WP Pusher:
+
+1. **Ativos Compilados Rastreáveis**: Removemos os arquivos construídos em `cahota-theme/assets/` e `cahota-theme/screenshot.jpg` do `.gitignore`. Isto garante que, ao executar `npm run build:wp` localmente e enviar os ficheiros para o GitHub, todos os estilos CSS e ficheiros JavaScript prontos para produção sejam comitados e fiquem disponíveis para o WP Pusher.
+2. **Ficheiro de Configuração `wppusher.json`**: Criamos o ficheiro `wppusher.json` na raiz do repositório para mapear automaticamente o projeto como um **Tema WordPress** e definir o subdiretório correto (`cahota-theme`) onde os ficheiros do tema residem.
+
+### Como Instalar o Tema Usando o WP Pusher:
+
+1. No painel administrativo do seu WordPress, instale e ative o plugin **WP Pusher** (disponível gratuitamente em [wppusher.com](https://wppusher.com)).
+2. Vá a **WP Pusher > Install Theme** no menu do WordPress.
+3. Preencha as seguintes opções:
+   * **Theme Repository**: Escreva o caminho do seu repositório GitHub (exemplo: `cahota/cahota-theme`).
+   * **Repository Branch**: Escolha o ramo principal (ex: `main` ou `master`).
+   * **Repository Subdirectory**: Insira `cahota-theme` (para indicar que o tema está no subdiretório do projeto).
+   * **Push-to-deploy**: Ative esta opção se desejar habilitar atualizações automáticas sempre que fizer um `git push` no seu repositório do GitHub.
+4. Clique em **Install Theme**. Pronto! O WP Pusher tratará de descarregar e instalar o seu tema de forma limpa.
+
+---
+
 ## ⚙️ Como Ativar o Deploy Automático no GitHub
 
 Para que o GitHub Actions envie os ficheiros diretamente para o seu alojamento WordPress, adicione os seguintes segredos nas configurações do seu repositório GitHub (`Settings > Secrets and variables > Actions > Repository secrets`):
