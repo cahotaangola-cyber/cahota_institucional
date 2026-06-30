@@ -2,6 +2,7 @@ import React from 'react';
 import { Calendar, CheckCircle2, ShieldAlert, Award, Compass, Warehouse } from 'lucide-react';
 import { translations, Language } from '../types';
 import { motion } from 'motion/react';
+import { getSetting } from '../config';
 
 interface StatsProps {
   currentLang: Language;
@@ -13,30 +14,30 @@ export default function Stats({ currentLang }: StatsProps) {
   const highlights = [
     {
       icon: <Calendar className="h-7 w-7 text-teal-600" />,
-      value: "3+",
-      label: currentLang === 'pt' ? 'Anos de Atuação em Angola' : 'Years Operating in Angola',
+      value: getSetting('stat3Value'), // Ex: "+120"
+      label: currentLang === 'pt' ? getSetting('stat3LabelPt') : getSetting('stat3LabelEn'),
       desc: currentLang === 'pt' ? 'Experiência robusta em múltiplos setores.' : 'Robust experience in multiple sectors.',
       accent: 'text-teal-600'
     },
     {
       icon: <CheckCircle2 className="h-7 w-7 text-emerald-600" />,
-      value: "100%",
-      label: currentLang === 'pt' ? 'Confiabilidade & Qualidade' : 'Reliability & Quality',
+      value: getSetting('stat1Value'), // Ex: "98%"
+      label: currentLang === 'pt' ? getSetting('stat1LabelPt') : getSetting('stat1LabelEn'),
       desc: currentLang === 'pt' ? 'Processamento seguro sob rígido contrato de conformidade.' : 'Secure processing under strict compliance contracts.',
       accent: 'text-emerald-650'
     },
     {
       icon: <Compass className="h-7 w-7 text-amber-600" />,
-      value: "24/7",
-      label: currentLang === 'pt' ? 'Suporte Geral 24/7' : '24/7 General Support',
+      value: getSetting('stat2Value'), // Ex: "24/7"
+      label: currentLang === 'pt' ? getSetting('stat2LabelPt') : getSetting('stat2LabelEn'),
       desc: currentLang === 'pt' ? 'Prontidão permanente para os nossos parceiros comerciais.' : 'Always at your service across all active divisions.',
       accent: 'text-amber-650'
     },
     {
       icon: <Warehouse className="h-7 w-7 text-teal-600" />,
-      value: "2+",
-      label: currentLang === 'pt' ? 'Escritórios Estratégicos' : 'Strategic Offices',
-      desc: currentLang === 'pt' ? 'Presença física em Luanda (Sede) e Filial no Lobito.' : 'Physically present in Luanda and Lobito branches.',
+      value: getSetting('stat4Value'), // Ex: "100%"
+      label: currentLang === 'pt' ? getSetting('stat4LabelPt') : getSetting('stat4LabelEn'),
+      desc: currentLang === 'pt' ? 'Presença física e apoio de logística de alcance nacional.' : 'Physical presence and logistical support with country-wide reach.',
       accent: 'text-teal-600'
     }
   ];

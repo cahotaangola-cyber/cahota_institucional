@@ -1,6 +1,7 @@
 import React from 'react';
 import { Shield, Quote, Star } from 'lucide-react';
 import { translations, Language } from '../types';
+
 import navitransImg from '../assets/images/navitrans_logo_1781194178590.jpg';
 import boltImg from '../assets/images/bolt_logo_1781196206964.jpg';
 import wilieteImg from '../assets/images/wiliete_logo_1781196614139.jpg';

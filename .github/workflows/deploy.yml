@@ -1,0 +1,83 @@
+name: Deploy to WordPress
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    name: Build & Deploy WordPress Theme
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build WordPress Theme
+        run: npm run build:wp
+
+      - name: Upload Theme Zip as Action Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cahota-theme-zip
+          path: cahota-theme.zip
+          retention-days: 7
+
+      # ==========================================
+      # DEPLOYMENT OPTIONS (Configure secrets to activate)
+      # ==========================================
+
+      # Option 1: SFTP / FTP Deployment (Default)
+      # To use this, add FTP_SERVER, FTP_USERNAME, and FTP_PASSWORD to your GitHub Repository Secrets.
+      - name: Deploy to WordPress Host via SFTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        if: env.HAS_FTP_SECRETS == 'true'
+        env:
+          HAS_FTP_SECRETS: ${{ secrets.FTP_SERVER != '' && secrets.FTP_USERNAME != '' && secrets.FTP_PASSWORD != '' }}
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./cahota-theme/
+          server-dir: ${{ secrets.FTP_REMOTE_DIR || '/wp-content/themes/cahota-theme/' }}
+          dangerous-clean-slate: false
+
+      # Option 2: SSH / Rsync Deployment (Highly Secure, Alternative)
+      # To use this, configure SSH_HOST, SSH_USER, SSH_KEY, and SSH_PORT.
+      - name: Deploy to WordPress Host via SSH/Rsync
+        uses: easingthemes/ssh-deploy@v5.1.0
+        if: env.HAS_SSH_SECRETS == 'true'
+        env:
+          HAS_SSH_SECRETS: ${{ secrets.SSH_HOST != '' && secrets.SSH_USER != '' && secrets.SSH_KEY != '' }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
+          ARGS: "-rlgoDzvC --delete"
+          SOURCE: "cahota-theme/"
+          REMOTE_HOST: ${{ secrets.SSH_HOST }}
+          REMOTE_USER: ${{ secrets.SSH_USER }}
+          REMOTE_PORT: ${{ secrets.SSH_PORT || '22' }}
+          TARGET: ${{ secrets.SSH_TARGET_DIR || '/var/www/html/wp-content/themes/cahota-theme' }}
+          EXCLUDE: "/.git/, /.github/"
+
+      # Option 3: Automate Release Creation on Git Tag Push
+      # Automatically uploads the theme zip file to a GitHub Release when a tag is pushed.
+      - name: Create GitHub Release on Tag
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/v')
+        with:
+          files: cahota-theme.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

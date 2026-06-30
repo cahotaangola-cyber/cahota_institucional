@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, ShieldCheck, Briefcase, Clock, Award } from 'lucide-react';
 import { translations, Language } from '../types';
 import { motion } from 'motion/react';
+import { getSetting } from '../config';
 import heroImage from '../assets/images/cahota_services_composite_1781346297713.jpg';
 
 interface HeroProps {
@@ -12,6 +13,9 @@ interface HeroProps {
 
 export default function Hero({ currentLang, onNavigateToQuote, onNavigateToServices }: HeroProps) {
   const t = translations[currentLang];
+  const heroTitle = currentLang === 'pt' ? getSetting('heroTitlePt') : getSetting('heroTitleEn');
+  const heroSubtitle = currentLang === 'pt' ? getSetting('heroSubtitlePt') : getSetting('heroSubtitleEn');
+  const nif = getSetting('nif');
 
   return (
     <section 
@@ -49,8 +53,8 @@ export default function Hero({ currentLang, onNavigateToQuote, onNavigateToServi
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight md:leading-tight"
             >
-              {t.heroTitle.split(' ').map((word, i) => {
-                const isHighlight = word === 'Marítimo' || word === 'Marine' || word === 'Confiáveis' || word === 'Reliable';
+              {heroTitle.split(' ').map((word, i) => {
+                const isHighlight = word === 'Marítimo' || word === 'Marine' || word === 'Confiáveis' || word === 'Reliable' || word === 'Suprimentos' || word === 'Performance' || word === 'Solutions';
                 return (
                   <span 
                     key={i} 
@@ -69,7 +73,7 @@ export default function Hero({ currentLang, onNavigateToQuote, onNavigateToServi
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mt-6 text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed"
             >
-              {t.heroSubtitle}
+              {heroSubtitle}
             </motion.p>
  
             {/* Buttons / Actions */}
@@ -109,7 +113,7 @@ export default function Hero({ currentLang, onNavigateToQuote, onNavigateToServi
                 <ShieldCheck className="h-5 w-5 text-teal-600 shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-semibold text-slate-900 text-sm">NIF Legal</h4>
-                  <p className="text-xs text-slate-500 font-mono">5001273264</p>
+                  <p className="text-xs text-slate-500 font-mono">{nif}</p>
                 </div>
               </div>
               
@@ -168,7 +172,7 @@ export default function Hero({ currentLang, onNavigateToQuote, onNavigateToServi
                     </div>
                   </div>
                   <div className="text-[10px] font-mono text-slate-500 bg-slate-50 py-1 px-2.5 rounded border border-slate-200">
-                    NIF 5001273264
+                    NIF {nif}
                   </div>
                 </div>
               </div>

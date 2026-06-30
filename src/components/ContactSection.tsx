@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Clock, FileCheck, Compass, MessageSquare, Anchor } from 'lucide-react';
 import { translations, Language } from '../types';
+import { getSetting } from '../config';
 
 interface ContactSectionProps {
   currentLang: Language;
@@ -10,9 +11,22 @@ export default function ContactSection({ currentLang }: ContactSectionProps) {
   const t = translations[currentLang];
 
   const phonesList = [
-    { number: "+244 929 071 923", label: currentLang === 'pt' ? 'Escritório Luanda (Sede)' : 'Luanda HQ Office', whatsapp: "244929071923" },
-    { number: "+244 935 325 219", label: currentLang === 'pt' ? 'Atendimento Lobito / Filial Marítima' : 'Lobito Branch / Marine Desk', whatsapp: "244935325219" }
-  ];  return (
+    { 
+      number: getSetting('phoneLuanda'), 
+      label: currentLang === 'pt' ? 'Escritório Luanda (Sede)' : 'Luanda HQ Office', 
+      whatsapp: getSetting('whatsappLuanda') 
+    },
+    { 
+      number: getSetting('phoneLobito'), 
+      label: currentLang === 'pt' ? 'Atendimento Lobito / Filial Marítima' : 'Lobito Branch / Marine Desk', 
+      whatsapp: getSetting('whatsappLobito') 
+    }
+  ];
+
+  const email = getSetting('email');
+  const nif = getSetting('nif');
+  const addressLuanda = getSetting('addressLuanda');
+  const addressLobito = getSetting('addressLobito');  return (
     <section id="contact" className="py-24 bg-white relative border-t border-slate-200">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-[140px] pointer-events-none" />
       
@@ -76,12 +90,12 @@ export default function ContactSection({ currentLang }: ContactSectionProps) {
                 {t.contactEmail}
               </h3>
               <a 
-                href="mailto:geral@cahota.ao" 
+                href={`mailto:${email}`} 
                 className="bg-white hover:bg-slate-50 p-4 rounded-xl border border-slate-200 flex items-center justify-between group transition-colors block"
               >
                 <div>
                   <span className="text-[10px] text-slate-500 font-mono block uppercase">E-MAIL GERAL REQUISICÕES</span>
-                  <span className="text-slate-950 font-bold text-sm sm:text-base group-hover:text-amber-600 transition-colors">geral@cahota.ao</span>
+                  <span className="text-slate-950 font-bold text-sm sm:text-base group-hover:text-amber-600 transition-colors">{email}</span>
                 </div>
                 <div className="bg-amber-500/10 text-amber-600 p-2 rounded-lg border border-amber-500/20">
                   <Mail className="h-4 w-4" />
@@ -97,7 +111,7 @@ export default function ContactSection({ currentLang }: ContactSectionProps) {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-slate-500 font-mono uppercase tracking-wider">Identificação Fiscal</h4>
-                  <p className="text-sm font-bold text-slate-900 mt-0.5">NIF: 5001273264</p>
+                  <p className="text-sm font-bold text-slate-900 mt-0.5">NIF: {nif}</p>
                 </div>
               </div>
               <span className="text-[10px] bg-white border border-slate-200 py-1 px-2.5 rounded-full text-slate-500 font-mono">
@@ -131,7 +145,7 @@ export default function ContactSection({ currentLang }: ContactSectionProps) {
                       <span className="h-1.5 w-1.5 bg-emerald-500 rounded-full " />
                     </h4>
                     <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                      Ed. W5, Centralidade do Kilamba, Luanda - Angola.
+                      {addressLuanda}
                     </p>
                     <p className="text-[10px] text-amber-600 font-semibold font-mono mt-1.5 flex items-center gap-1">
                       <MapPin className="h-3 w-3" />
@@ -153,9 +167,7 @@ export default function ContactSection({ currentLang }: ContactSectionProps) {
                       {t.officeBranchOffice}
                     </h4>
                     <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                      {currentLang === 'pt' 
-                        ? 'Filial e Apoio de Logística de Ship Chandling e Suporte Técnico em Benguela.' 
-                        : 'Maritime Branch, Ship Chandling Supply & Technical Support Desk in Benguela.'}
+                      {addressLobito}
                     </p>
                     <p className="text-[10px] text-blue-600 font-semibold font-mono mt-1.5 flex items-center gap-1">
                       <Anchor className="h-3 w-3" />
@@ -177,7 +189,7 @@ export default function ContactSection({ currentLang }: ContactSectionProps) {
               </div>
               
               <div className="text-left sm:text-right font-mono text-[9px] text-slate-500 uppercase">
-                <p>NIF Legal: 5001273264</p>
+                <p>NIF Legal: {nif}</p>
                 <p className="mt-0.5">www.cahota.ao</p>
               </div>
             </div>

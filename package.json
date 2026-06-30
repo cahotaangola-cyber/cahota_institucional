@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
     "build": "vite build",
-    "postbuild": "node scripts/prepare-theme.js",
+    "build:wp": "node scripts/build-wp.js",
     "preview": "vite preview",
-    "clean": "rm -rf dist server.js",
+    "clean": "rm -rf dist server.js cahota-theme/assets cahota-theme.zip",
     "lint": "tsc --noEmit"
   },
   "dependencies": {
